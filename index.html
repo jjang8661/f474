@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>final</title>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="./js/main.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drunk Driving Fatality</title>
 
+  <!-- Libraries -->
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css"/>
+
+  <!-- Script files -->
+  <script src="js/Dots.js"></script>
+  <script src="js/app.js"></script>
 </head>
-<body class="container">
-<div id="layout">
-    <div id="main">
-        <div class="header">
-            <h1>final.info 474</h1>
-        </div>
-        <form>
-        	<button type="submit" class="btn btn-primary">Simulate</button>
-        </form>
-        <div id="chart"></div>
+
+<body>
+    <div class="container" ng-app="myApp" id="app" ng-controller="MainController">
+        <h1> TITLE </h1>
+        <section>
+        <scroll class="scroller" ng-style="{'height':'100vh'}">
+          <div ng-repeat="section in sectionSet" ng-style="$last == true && {'height':'calc(100%)','background-color':section.color} || {'height':sectionHeight + 'px','background-color':section.color}">
+           <div class="sectionText">
+            <p class="sectionText" ng-class="{selected: $index == step}" ng-bind=section.text></p>
+           </div>
+
+          </div>
+
+        </scroll>
+        <dots class="chart"></dots>
+        </section>
     </div>
-</div>
-	
-	
-</body>
+  </body>
 </html>

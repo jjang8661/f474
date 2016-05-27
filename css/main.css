@@ -1,0 +1,33 @@
+/* Main CSS file */
+
+body {
+  font-family: Helvetica,sans-sarif;
+  font-size: 16px;
+}
+/* Container for the scroller */
+.scroller {
+  width:100%;
+  display:inline-block;
+  font-size:20px;
+  padding-left:10px;
+  margin-right:20px;
+}
+
+/* Selected section at full opacity */
+.scroller .selected {
+  opacity:1;
+}
+
+.sectionText {
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  padding: 1em;
+}
+
+.chart   {
+  display:inline-block;
+  position:fixed;
+  top:200px;
+}
+
